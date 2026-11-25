@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique — Catalogue</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a href="#" class="brand">MaBoutique</a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#catalogue" class="nav__link">Catalogue</a>
+        <a href="#apropos" class="nav__link">À propos</a>
+        <a href="#compte" class="nav__link">Compte</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button id="theme-toggle" class="btn btn--ghost" type="button" aria-label="Changer de thème">
+          Mode sombre
+        </button>
+        <button id="cart-btn" class="btn btn--primary" type="button">
+          Panier (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="catalogue" class="container section">
+    <div class="toolbar">
+      <div>
+        <h1>Nos produits</h1>
+        <p class="muted">Recherchez un article, filtrez par catégorie et ajoutez au panier.</p>
+      </div>
+
+      <div class="filters">
+        <input
+          id="search-input"
+          class="input"
+          type="search"
+          placeholder="Rechercher un produit..."
+          aria-label="Rechercher un produit"
+        />
+        <select id="category-select" class="input" aria-label="Filtrer par catégorie">
+          <option value="all">Toutes les catégories</option>
+          <option value="electronique">Électronique</option>
+          <option value="mode">Mode</option>
+          <option value="maison">Maison</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Grille de produits remplie dynamiquement (ou via HTML) -->
+    <section id="products-grid" class="products-grid" aria-label="Liste des produits">
+      <article class="product-card" data-id="1" data-category="electronique">
+        <div class="product-card__media">
+          <img src="https://placehold.co/600x400?text=Produit+1" alt="Casque audio sans fil" loading="lazy" />
+        </div>
+        <div class="product-card__body">
+          <span class="badge">Électronique</span>
+          <h2 class="product-card__title">Casque Audio Sans Fil</h2>
+          <p class="product-card__desc">Son clair, autonomie longue durée et coussinets confortables.</p>
+          <div class="product-card__footer">
+            <strong class="product-card__price">25 000 FCFA</strong>
+            <button class="btn btn--primary add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="2" data-category="mode">
+        <div class="product-card__media">
+          <img src="https://placehold.co/600x400?text=Produit+2" alt="Sac à dos urbain" loading="lazy" />
+        </div>
+        <div class="product-card__body">
+          <span class="badge">Mode</span>
+          <h2 class="product-card__title">Sac à Dos Urbain</h2>
+          <p class="product-card__desc">Tissu résistant à l'eau, compartiment ordinateur et poches organisées.</p>
+          <div class="product-card__footer">
+            <strong class="product-card__price">18 500 FCFA</strong>
+            <button class="btn btn--primary add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="3" data-category="maison">
+        <div class="product-card__media">
+          <img src="https://placehold.co/600x400?text=Produit+3" alt="Lampe de bureau LED" loading="lazy" />
+        </div>
+        <div class="product-card__body">
+          <span class="badge">Maison</span>
+          <h2 class="product-card__title">Lampe de Bureau LED</h2>
+          <p class="product-card__desc">Éclairage doux réglable pour le travail, la lecture ou le soir.</p>
+          <div class="product-card__footer">
+            <strong class="product-card__price">12 000 FCFA</strong>
+            <button class="btn btn--primary add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="4" data-category="electronique">
+        <div class="product-card__media">
+          <img src="https://placehold.co/600x400?text=Produit+4" alt="Batterie externe rapide" loading="lazy" />
+        </div>
+        <div class="product-card__body">
+          <span class="badge">Électronique</span>
+          <h2 class="product-card__title">Batterie Externe 20 000 mAh</h2>
+          <p class="product-card__desc">Recharge rapide pour smartphone et accessoires en déplacement.</p>
+          <div class="product-card__footer">
+            <strong class="product-card__price">16 000 FCFA</strong>
+            <button class="btn btn--primary add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <p id="no-results" class="hidden">Aucun produit trouve</p>
+    
+  </main>
+
+  <footer id="apropos" class="footer">
+    <div class="container footer__inner">
+      <p><strong>MaBoutique</strong> — Livraison à domicile et commande rapide via WhatsApp.</p>
+      <p class="muted">Paiements directs OM / MoMo prévus en V2.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
